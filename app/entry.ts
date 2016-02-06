@@ -3,6 +3,7 @@ export interface Entry {
   description: string;
   help: string;
   links?: Link[];
+  required boolean;
 }
 
 export interface Link {

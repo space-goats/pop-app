@@ -23,9 +23,16 @@ export class WhatsNextComponent {
   }
 
   public populate_nexts(last_motion: string){
-    if(last_motion === 'MOF'){
-      this.whatsnext.push();
+    if(last_motion === 'COMPLAINT/PETITION FILED $'){
+
+      this.whatsnext.push(this.getEntry("SUMMONS ISSUED"), this.get);
 
     }
+  }
+
+  public getEntry(name:string):Entry{
+    for e in ENTRIES
+        if e.name = name
+            return e;
   }
 }
