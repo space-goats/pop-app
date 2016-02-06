@@ -25,12 +25,13 @@ export class CaseComponent implements OnInit {
 
   ngOnInit(){
     this.case_id = this._routeParams.get('case_id');
-    this._caseService.getMockCase(this.case_id)
-        .then(res => this._setup(res),
+    this._caseService.getCase(this.case_id)
+        .subscribe(res => this._setup(res),
               error => this.error = "SERVER ERROR\n" + error);
     }
 
   private _setup(res: Case){
+    console.log(res);
     this.case = res;
     if(this.case && this.case.docket.length > 0){
       this.last_entry = this.case.docket[this.case.docket.length - 1].name;

@@ -13,14 +13,13 @@ export class CaseService {
   }
 
   public getCase(case_id: string){
-    return this._http.get('/api/case/' + case_id)
-                  .toPromise()
-                  .then(res => <Case> res.json())
+    return this._http.get('/api/case/' + case_id + '/')
+                  .map(res => <Case> res.json())
                   .catch(this.handleError);
   }
 
   private handleError(error: any){
     console.error(error);
-    return Promise.reject(error.message || error.json().error || 'Server error');
+    return Observable.throw(error.json().error || 'Server Error');
   }
 }
