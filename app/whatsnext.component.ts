@@ -1,4 +1,6 @@
 import {Component} from 'angular2/core';
+import {Entry, Link} from './entry';
+import {ENTRIES} from './mock-entries';
 
 @Component({
     selector: 'my-whatsnext',
@@ -13,7 +15,7 @@ import {Component} from 'angular2/core';
 })
 
 export class WhatsNextComponent {
-  public whatsnext: string[] = [];
+  public whatsnext: Entry[] = [];
   public motion: string;
 
   constructor(){
@@ -22,7 +24,7 @@ export class WhatsNextComponent {
 
   public populate_nexts(last_motion: string){
     if(last_motion === 'MOF'){
-      this.whatsnext.push('I have no idea');
+      this.whatsnext.push();
 
     }
   }
