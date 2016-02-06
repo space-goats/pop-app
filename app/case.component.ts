@@ -16,12 +16,15 @@ import {Router, RouteParams} from 'angular2/router';
 export class CaseComponent implements OnInit {
   public case_id: string;
   public case: Case;
+  public error: string;
 
   constructor(private _caseService: CaseService,
               private _routeParams: RouteParams){ }
 
   ngOnInit(){
     this.case_id = this._routeParams.get('case_id');
-    this._caseService.getCase(this.case_id).then(res => this.case = res);
+    this._caseService.getMockCase(this.case_id)
+        .then(res => this.case = res,
+              error => this.error = "SERVER ERROR\n" + error);
   }
 }
