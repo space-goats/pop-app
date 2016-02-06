@@ -1,0 +1,18 @@
+<div *ngIf="error">
+  {{error}}
+</div>
+<div *ngIf="case">
+  <h2>{{case.case_id}}</h2>
+  <h2>{{case.title}}</h2>
+  <div class="case_status">
+    <h3>{{case.case_type}}</h3>
+    <h3>{{case.status}}</h3>
+    <h3>{{case.last_date}}</h3>
+  </div>
+  <div class="container">
+    <my-party *ngFor="#party of case.parties" [party]="party">Missing</my-party>
+  </div>
+  <div class="container">
+    <my-docket *ngFor="#de of case.docket" [docket_entry]="de">Missing</my-docket>
+  </div>
+</div>
