@@ -4,7 +4,7 @@ import {Party} from './case';
 @Component({
     selector: 'my-party',
     templateUrl: 'templates/party.html',
-    styleUrls: ['templates/party.css',],
+    styleUrls: ['templates/party.css', 'templates/cards.css'],
     inputs: ['party']
 })
 

@@ -1,5 +1,5 @@
-<div class="{{docket_entry.side}}">
+<div class="card {{docket_entry.side}} {{css}}">
+  <label *ngIf="!docket_entry.file">{{docket_entry.name}}</label>
   <a *ngIf="docket_entry.file" href="{{docket_entry.file}}">{{docket_entry.name}}</a>
-  <span *ngIf="!docket_entry.file">{{docket_entry.name}}</span>
-  <span>{{docket_entry.date}}</span>
+  <span class="date">{{docket_entry.date}}</span>
 </div>

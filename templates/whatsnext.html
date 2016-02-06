@@ -1,0 +1,11 @@
+<div class="card col-sm-6 wn" *ngFor="#wn of whatsnext">
+  <label class="card-title">{{wn.description}}</label>
+  <span class="name">{{wn.name}}</span>
+  <p class="card-block">{{wn.help}}</p>
+  <a
+    *ngFor="#link of wn.links"
+    class="card-block"
+    href="link.url">
+      {{link.name}}
+    </a>
+</div>

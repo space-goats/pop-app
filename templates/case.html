@@ -1,19 +1,62 @@
 <div *ngIf="error">
   {{error}}
 </div>
-<div *ngIf="case">
-  <h2>{{case.case_id}}</h2>
-  <h2>{{case.title}}</h2>
-  <div class="case_status">
-    <h3>{{case.case_type}}</h3>
-    <h3>{{case.status}}</h3>
-    <h3>{{case.last_date}}</h3>
+<div *ngIf="case" class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>{{case.case_id}}</h2>
+      <h1>{{case.title}}</h1>
+    </div>
+    <div class="card case_status col-sm-4">
+      <label class="card-block">{{case.case_type}}</label>
+      <label class="card-block">{{case.status}}</label>
+      <label class="card-block">{{case.last_date}}</label>
+    </div>
   </div>
-  <div class="container">
-    <my-party *ngFor="#party of case.parties" [party]="party">Missing</my-party>
+
+  <div class="others">
+    <div class="row"
+      *ngFor="#party of case.parties">
+      <my-party
+        class="col-sm-4 col-sm-offset-4"
+        *ngIf="party.side !== 'p' && party.side !== 'd'"
+        [party]="party">
+          Missing
+      </my-party>
+    </div>
   </div>
-  <div class="container">
-    <my-docket *ngFor="#de of case.docket" [docket_entry]="de">Missing</my-docket>
+
+  <div class="row">
+    <div class="plaintiffs col-sm-6">
+      <div class="row"
+        *ngFor="#party of case.parties">
+        <my-party
+          *ngIf="party.side === 'p'"
+          [party]="party">
+            Missing
+        </my-party>
+      </div>
+    </div>
+
+    <div class="defendants col-sm-6">
+      <div class="row"
+        *ngFor="#party of case.parties">
+        <my-party
+          *ngIf="party.side === 'd'"
+          [party]="party">
+            Missing
+        </my-party>
+      </div>
+    </div>
   </div>
-  <my-whatsnext [motion]="last_entry"></my-whatsnext>
+
+  <h3 class="row title">What's Next?</h3>
+
+  <my-whatsnext class="row" [motion]="last_entry"></my-whatsnext>
+
+  <h3 class="row title">Docket</h3>
+
+  <div class="row" *ngFor="#de of case.docket">
+    <my-docket [docket_entry]="de">Missing</my-docket>
+  </div>
 </div>

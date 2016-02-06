@@ -4,15 +4,8 @@ import {ENTRIES} from './mock-entries';
 
 @Component({
     selector: 'my-whatsnext',
-    template: `
-              <ul>
-                <li *ngFor="#wn of whatsnext">
-                  <p>{{wn.name}}</p>
-                  <p>{{wn.description}}</p>
-                  <p>{{wn.help}}</p>
-                </li>
-              </ul>
-              `,
+    templateUrl: 'templates/whatsnext.html',
+    styleUrls: ['templates/cards.css', 'templates/whatsnext.css'],
     inputs: ['motion']
 })
 
