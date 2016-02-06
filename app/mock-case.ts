@@ -12,6 +12,6 @@ export var CASE: Case = {
   ],
   'docket': [
     {'side': 'p', 'date': '2015-10-24', 'name': 'Manner of Filing'},
-    {'side': 'd', 'date': '2015-10-23', 'name': 'Manner of Dismissal', 'file': 'http://google.com/'}
+    {'side': 'd', 'date': '2015-10-23', 'name': 'COMPLAINT/PETITION FILED $', 'file': 'http://google.com/'}
   ]
 };

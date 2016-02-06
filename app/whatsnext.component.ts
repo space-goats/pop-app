@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {Entry, Link} from './entry';
 import {ENTRIES} from './mock-entries';
 
@@ -6,7 +6,7 @@ import {ENTRIES} from './mock-entries';
     selector: 'my-whatsnext',
     template: `
               <ul>
-                <li *ngFor="#wn in whatsnext">
+                <li *ngFor="#wn of whatsnext">
                   <p>{{wn.name}}</p>
                   <p>{{wn.description}}</p>
                   <p>{{wn.help}}</p>
@@ -16,11 +16,13 @@ import {ENTRIES} from './mock-entries';
     inputs: ['motion']
 })
 
-export class WhatsNextComponent {
+export class WhatsNextComponent implements OnInit {
   public whatsnext: Entry[] = [];
   public motion: string;
 
-  constructor(){
+  constructor(){ }
+
+  ngOnInit(){
     this.populate_nexts(this.motion);
   }
 
@@ -79,7 +81,7 @@ export class WhatsNextComponent {
   public getEntry(names:string[]):Entry[]{
     var ret: Entry[] = [];
     for(let i: number = 0; i < ENTRIES.length; i++){
-      for(let ii: number = 0; i < names.length; ii++){
+      for(let ii: number = 0; ii < names.length; ii++){
         if(ENTRIES[i].name === names[ii]){
           ret.push(ENTRIES[i]);
         }

@@ -15,4 +15,5 @@
   <div class="container">
     <my-docket *ngFor="#de of case.docket" [docket_entry]="de">Missing</my-docket>
   </div>
+  <my-whatsnext [motion]="last_entry"></my-whatsnext>
 </div>
