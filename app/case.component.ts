@@ -34,7 +34,6 @@ export class CaseComponent implements OnInit {
     this.case = res;
     if(this.case && this.case.docket.length > 0){
       this.last_entry = this.case.docket[this.case.docket.length - 1].name;
-      console.log(this.last_entry);
     }
   }
 }

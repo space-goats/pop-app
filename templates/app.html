@@ -1,2 +1,10 @@
-<a [routerLink]="['CaseDetails', {case_id:'60DR-15-245'}]">Case?</a>
+<nav class="navbar navbar-light bg-faded" style="margin-bottom:1em">
+    <h2 class="navbar-brand">Better Court Connect</h2>
+    <input
+      class="nav-item"
+      style="float:right"
+      (keyup.enter)="searchCase()"
+      [(ngModel)]="case_id"
+      placeholder="Search Cases..."/>
+</nav>
 <router-outlet></router-outlet>
