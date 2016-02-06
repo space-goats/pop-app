@@ -19,7 +19,7 @@ import {HTTP_PROVIDERS} from 'angular2/http';
 ])
 
 export class AppComponent {
-  public case_id: string = '60DR-15-524';
+  public case_id: string = '';
 
   constructor(private _router: Router) { }
 
