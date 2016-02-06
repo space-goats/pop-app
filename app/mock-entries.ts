@@ -15,17 +15,30 @@ export var ENTRIES: Entry[] = [
   {"name": "SUMMONS ISSUED",
    "description": "Summons",
    "help": "Court generated document meant to provide legal notice about the law suit.",
-   "links": {"url": "https://courts.arkansas.gov/rules-and-administrative-orders/court-rules/rule-4-summons", "name": " See Arkansas Rules of Civil Procedure Rule 4 for timing and service rules."}
+   "links": [{"url": "https://courts.arkansas.gov/rules-and-administrative-orders/court-rules/rule-4-summons", "name": " See Arkansas Rules of Civil Procedure Rule 4 for timing and service rules."}]
  },
   {"name": "ANSWER FILED",
    "description": "Answer",
    "help": "An answer must be filed in response to any Complaint or Petition.",
-   "links": {"url": "http://www.arlegalservices.org/answer", "name": "More information."}
+   "links": [{"url": "http://www.arlegalservices.org/answer", "name": "More information."},
+   	{"url": "A./static/Answer.pdf", "name": "View Form."}]
+ 	"required":true
  } ,
    {"name": "RESPONSE/REPLY",
    "description": "Response",
-   "help": ""
+   "help": " This document should reflect an admission or denial of each paragraph of the document in which the party is responding.",
+   "required":true
  } ,
+   {"name": "RESPONSE TO MOTION FILED",
+   "description": "Response",
+   "help": " This document should reflect an admission or denial of each paragraph of the document in which the party is responding.",
+   "required":true
+ } ,
+   {"name": "RESPONSE TO REQ FOR ADMISSIONS",
+   "description": "Response",
+   "help": " This document should reflect an admission or denial of each paragraph of the document in which the party is responding.",
+   "required":true
+ },
    {"name": "COUNTERCLAIM",
    "description": "Counter Complaint",
    "help": "Pleading filed by Defendant to allege fault in this
@@ -37,13 +50,8 @@ export var ENTRIES: Entry[] = [
 	action or actions. For example, a Protective Order may be drafted to
 	prohibit parties from disparaging each other in social media, in front of
 	the children, or to friends and family, or prohibit parties from selling
-	joint property or otherwise taking away financial accounts."
-   
- } ,
-   {"name": "COUNTERCLAIM",
-   "description": "Counter Complaint",
-   "help": "Pleading filed by Defendant to allege fault in this
-	matter is on the Plaintiff"
+	joint property or otherwise taking away financial accounts.",
+	"links": [{"url": "./static/motion_for_protective_order.pdf", "name": "View Form."}]
  } ,
    {"name": "REQUEST FOR ADMISSIONS",
    "description": "Request for Admissions",
@@ -55,14 +63,15 @@ export var ENTRIES: Entry[] = [
    "description": "Agreed Decree of Divorce",
    "help": "This document should reflect all agreements
 	regarding division of property and child custody and visitation, if
-	applicable, and be signed by both parties."
+	applicable, and be signed by both parties.",
+	"links": [{"url": "./static/Agreed_decree_of_divorce.pdf", "name": "View Form."}]
  } ,
     {"name": "MOTION COMPEL",
    "description": "Motion to Compel",
    "help": " This document should be filed if the opposing party has
 	failed to fully respond to discovery requests. Please see the Arkansas
 	Rules of Civil Procedure governing the discovery process."
-	"links": {"url": "https://courts.arkansas.gov/rules-and-administrative-orders/court-rules/rule-26-general-provisions-governing-discovery", "name": "More information."}
+	"links": [{"url": "https://courts.arkansas.gov/rules-and-administrative-orders/court-rules/rule-26-general-provisions-governing-discovery", "name": "More information."}]
  } ,
  	{"name": "MOTION EXTEND SERVICE TIME",
    "description": "Motion to Extend Time",
@@ -77,7 +86,7 @@ export var ENTRIES: Entry[] = [
 	support thereof."
  } ,
  	{"name": "MOTION DEFAULT JUDGMENT",
-   "description": "Motion to Extend Time",
+   "description": "Motion for Default Judgment",
    "help": "This document asks the Court to enter a
 	judgment in favor of the filing party after the time for the opposing party
 	to respond has lapsed and the opposing party failed to respond."
@@ -92,7 +101,7 @@ export var ENTRIES: Entry[] = [
    "help": "This document asks the Court to Order the
 	opposing party to establish and enforce child support obligations. See
 	Administrative Rule 10.",
-	"links": {"url": "https://courts.arkansas.gov/sites/default/files/html/ao_10.htm", "name": "More information."}
+	"links": [{"url": "https://courts.arkansas.gov/sites/default/files/html/ao_10.htm", "name": "More information."}]
  }
 
 ]
